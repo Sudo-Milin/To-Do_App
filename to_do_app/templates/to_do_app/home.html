@@ -8,10 +8,16 @@
 </head>
 <body>
     <h1>hello</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form>
     <ul>
-        <form action="" method="post">{{ form }}</form>
         {% for task in list_of_task %}
             <li>{{ task }}</li>
+
         {% endfor %}
     </ul>
 </body>
