@@ -7,7 +7,7 @@
     <title>To Do List</title>
 </head>
 <body>
-    <h1>hello</h1>
+    <h1>To-Do List</h1>
     
     <form method="post">
         {% csrf_token %}
@@ -16,7 +16,7 @@
     </form>
     <ul>
         {% for task in list_of_task %}
-            <li>{{ task }}</li>
+            <li>{{ task }}<a href="{% url 'to_do_app:delete-task' task.pk %}"></tr><button type="submit">Delete</button></a><br><br></li>
 
         {% endfor %}
     </ul>

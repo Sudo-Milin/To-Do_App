@@ -5,4 +5,5 @@ app_name = "to_do_app"
 
 urlpatterns = [
         path("", views.ToDoList, name="List"),
+        path("<int:pk>/", views.delete_task, name="delete-task"),
 ]

@@ -11,7 +11,7 @@ def ToDoList(request):
         if form.is_valid():
             form.save()
             return redirect("/")
-
+    
     context =  {
             "list_of_task" : list_of_task,
             "form": form
@@ -19,8 +19,10 @@ def ToDoList(request):
     return render(request, "to_do_app/home.html", context)
 
 def delete_task(request, pk):
-        task = List.objects.get(id=pk)
-        task.delete()
-        return redirect("/")
+    task = List.objects.get(id=pk)
+    task.delete()
+    return redirect("/")
+  
+
 
 
